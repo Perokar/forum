@@ -17,4 +17,4 @@ export const postCreateValidation = [
     body('text', 'Замало тексту').isLength({ min: 15 }),
     body('tags', 'Невірний формат тегу').optional().isArray(),
     body('imgURL', 'Невірний формат лінку на зображення').optional().isString(),
-]
+];
