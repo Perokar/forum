@@ -25,12 +25,14 @@ app.get('/auth/me', checkAuth, UserController.checkMe);
 app.post('/auth/login',loginValidation, UserController.login )
 // registration
 app.post('/auth/register', registerValidation, UserController.register)
-//work with posts
-//app.get('/posts',PostController.getAll )
-//app.get('/post/:id', PostController.getOne )
-app.post('/post',checkAuth, postCreateValidation, PostController.create )
-//app.delete('/post',checkAuth, PostController.remove )
-//app.patch('/post',checkAuth, PostController.update )
+
+/*work with posts */
+//get All posts
+app.get('/posts',PostController.getAll );
+app.get('/posts/:id', PostController.getOne )
+app.post('/posts',checkAuth, postCreateValidation, PostController.create )
+app.delete('/posts/:id',checkAuth, PostController.remove )
+app.patch('/posts/:id',checkAuth, PostController.update )
 
 app.listen(4444, (err) => {
     if (err) {
